@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ActividadCambiarDePantalla</string>
+    <string name="textViewNombre">Entrar Nombre:</string>
+    <string name="textViewApellido">Entrar Apellido:</string>
+    <string name="textViewEdad">Entrar edad:</string>
+    <string name="buttonAceptar">Aceptar</string>
+    <string name="checkBoxPermiso">¿Permite publicar estos datos?</string>
+
+</resources>

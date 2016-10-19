@@ -17,17 +17,20 @@ public class MainActivity2 extends AppCompatActivity {
         TextView textViewEdad = (TextView)findViewById(R.id.textViewEdad);
         TextView textViewPermiso = (TextView)findViewById(R.id.textViewPermiso);
 
-        //Creamos un bundle y preguntamos si el intent de la llamada lleva algo en el bundle
+        //Creamos un bundle y preguntamos si el intent de la llamada lleva algo
+        // en el bundle
         Bundle b = getIntent().getExtras();
 
-        //Decimos que en la variable de textViewNombre ponga el texto que hay en el cajon llamado "Nombre"
+        //Decimos que en la variable de textViewNombre ponga el texto que hay
+        // en el cajon llamado "Nombre"
         textViewNombre.setText("Nombre: " + b.getString("Nombre"));
 
         //Hacemos lo mismo con los otros
         textViewApellido.setText("Apellido: " + b.getString("Apellido"));
         textViewEdad.setText("Edad: " + b.getString("Edad"));
 
-        //Hacemos un if para saber si el valor que trae Permiso es true o false y dependiendo de ellos ponemos un texto u otro
+        //Hacemos un if para saber si el valor que trae Permiso es true o false
+        // y dependiendo de ellos ponemos un texto u otro
         if (b.getBoolean("Permiso")== true)
         {
             textViewPermiso.setText("Da permiso");

@@ -41,13 +41,16 @@ public class MainActivity extends AppCompatActivity {
             //Creamos la funcion onClick, que activara cuando pulsen el boton
             public void onClick(View v)
             {
+                //Hacemos un if que compruebe que hay dentro de los editText para saber si han
+                //dejado alguno vacio
                 if (editTextNombre.getText().toString().equalsIgnoreCase("") || editTextApellido.getText().toString().equalsIgnoreCase("") || editTextEdad.getText().toString().equalsIgnoreCase(""))
                 {
+                    //El toast es un elemento que muestra una notificación temporal la pantalla
                     Toast.makeText(MainActivity.this, "Has dejado algun campo vacio.", Toast.LENGTH_SHORT).show();
                 }
+                //Si todos los campos estan rellenados pasamos a la siguiente instrucción
                 else
                 {
-
                     //El Bundle es como un armario con diferentes cajones en el que podemos guardar cosas
                     //Declaramos un objeto de tipo Bundle y lo instanciamos
                     Bundle b = new Bundle();

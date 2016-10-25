@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,31 +41,38 @@ public class MainActivity extends AppCompatActivity {
             //Creamos la funcion onClick, que activara cuando pulsen el boton
             public void onClick(View v)
             {
-                //El Bundle es como un armario con diferentes cajones en el que podemos guardar cosas
-                //Declaramos un objeto de tipo Bundle y lo instanciamos
-                Bundle b = new Bundle();
+                if (editTextNombre.getText().toString().equalsIgnoreCase("") || editTextApellido.getText().toString().equalsIgnoreCase("") || editTextEdad.getText().toString().equalsIgnoreCase(""))
+                {
+                    Toast.makeText(MainActivity.this, "Has dejado algun campo vacio.", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
 
-                //Metemos en un cajon del bundle un dato, le pones de id "Nombre"
-                //decimos que sera el editTextNombre
-                b.putString("Nombre", editTextNombre.getText().toString());
+                    //El Bundle es como un armario con diferentes cajones en el que podemos guardar cosas
+                    //Declaramos un objeto de tipo Bundle y lo instanciamos
+                    Bundle b = new Bundle();
 
-                //Hacemos lo mismo con los otros
-                b.putString("Apellido", editTextApellido.getText().toString());
-                b.putString("Edad", editTextEdad.getText().toString());
+                    //Metemos en un cajon del bundle un dato, le pones de id "Nombre"
+                    //decimos que sera el editTextNombre
+                    b.putString("Nombre", editTextNombre.getText().toString());
 
-                //Aqui enviaremos el valor del checkBox
-                b.putBoolean("Permiso", checkBoxPermiso.isChecked());
+                    //Hacemos lo mismo con los otros
+                    b.putString("Apellido", editTextApellido.getText().toString());
+                    b.putString("Edad", editTextEdad.getText().toString());
 
-                //Creamos un objeto del tipo Intent, que sirve para ir de una activity a otra
-                //diciendo primero donde estamos y despues de la coma, donde queremos ir
-                Intent intencion = new Intent(MainActivity.this, MainActivity2.class);
+                    //Aqui enviaremos el valor del checkBox
+                    b.putBoolean("Permiso", checkBoxPermiso.isChecked());
 
-                //Le añadimos al Intent que lleve con sigo el Bundle que lleva los datos que hemos guardado
-                intencion.putExtras(b);
+                    //Creamos un objeto del tipo Intent, que sirve para ir de una activity a otra
+                    //diciendo primero donde estamos y despues de la coma, donde queremos ir
+                    Intent intencion = new Intent(MainActivity.this, MainActivity2.class);
 
-                //Activamos el Intent
-                startActivity(intencion);
+                    //Le añadimos al Intent que lleve con sigo el Bundle que lleva los datos que hemos guardado
+                    intencion.putExtras(b);
 
+                    //Activamos el Intent
+                    startActivity(intencion);
+                }
             }
         });
     }

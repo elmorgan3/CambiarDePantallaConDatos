@@ -60,6 +60,7 @@
             android:id="@+id/textViewPermiso"
             android:textSize="24sp"
             android:textColor="@android:color/black" />
+
     </LinearLayout>
 
 </RelativeLayout>

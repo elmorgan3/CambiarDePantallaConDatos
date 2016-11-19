@@ -18,7 +18,7 @@ public class MainActivity2 extends AppCompatActivity {
         TextView textViewPermiso = (TextView)findViewById(R.id.textViewPermiso);
 
         //Creamos un bundle y preguntamos si el intent de la llamada lleva algo
-        //en el bundle
+        //en el intent
         Bundle b = getIntent().getExtras();
 
         //Decimos que en la variable de textViewNombre ponga el texto que hay
